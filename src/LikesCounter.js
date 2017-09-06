@@ -1,21 +1,32 @@
 import React, { Component } from 'react';
+import ActionButton from './ActionButton'
 
 
 class LikesCounter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      like: props.initialLikes
+    };
+  }
+
+  handleDislikeClick(){
+    alert('Dislike');
+  }
+  handleLikeClick(){
+    alert('Like');
+  }
   render() {
     return (
       <div>
-        <button
-          className="Like"
-          onClick={this.props.onClick}>
-          Like
-        </button>
-        
-        <button
-          className="Dislike"
-          onClick={this.props.onClick}>
-          Dislike
-        </button>
+        <div>Likes: {this.state.likes}</div>
+        <ActionButton
+          text="Like + 1"
+          onClick={() => this.handleLikeClick()}/>
+
+        <ActionButton
+          text="Dislike - 1"
+          onClick={() => this.handleDislikeClick()}/>
       </div>
     )
   }
