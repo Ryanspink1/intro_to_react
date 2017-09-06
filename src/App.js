@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ActionButton from './ActionButton';
+// import ActionButton from './ActionButton';
+import LikesCounter from './LikesCounter';
 
 
 
 class App extends Component {
-  handleClick() {
-    alert('you clicked me!')
+  handleClick(name) {
+    alert(name.target.className)
   }
   render() {
     return (
       <div className="App">
-        <ActionButton
-          text = "Submit the Action"
-          onClick={this.handleClick}/>
+        <LikesCounter
+          onClick={this.handleClick}
+          />
       </div>
     );
   }
