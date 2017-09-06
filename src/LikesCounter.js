@@ -6,16 +6,22 @@ class LikesCounter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      like: props.initialLikes
+      likes: props.initialLikes
     };
   }
 
-  handleDislikeClick(){
-    alert('Dislike');
-  }
   handleLikeClick(){
-    alert('Like');
+    this.setState({
+      likes: parseInt(this.state.likes) + 1
+    })
   }
+
+  handleDislikeClick(){
+    this.setState({
+      likes: this.state.likes - 1
+    })
+  }
+
   render() {
     return (
       <div>

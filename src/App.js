@@ -7,14 +7,12 @@ import LikesCounter from './LikesCounter';
 
 
 class App extends Component {
-  handleClick(name) {
-    alert(name.target.className)
-  }
+
   render() {
     return (
       <div className="App">
         <LikesCounter
-          onClick={this.handleClick}
+          initialLikes= "0"
           />
       </div>
     );
