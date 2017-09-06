@@ -10,17 +10,21 @@ class LikesCounter extends Component {
     };
   }
 
-  handleLikeClick(){
+  modifyLikes(likeValue){
     this.setState({
-      likes: parseInt(this.state.likes) + 1
-    })
+      likes: parseInt(this.state.likes) + likeValue
+    });
+  }
+
+  handleLikeClick(){
+    this.modifyLikes(1);
   }
 
   handleDislikeClick(){
-    this.setState({
-      likes: this.state.likes - 1
-    })
+    this.modifyLikes(-1);
   }
+
+
 
   render() {
     return (
